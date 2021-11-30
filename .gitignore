@@ -1,0 +1,7 @@
+# Ignore binares without extension
+*
+!/**/
+!*.*
+!LICENSE
+# Ignore inputs
+*.txt

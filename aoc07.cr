@@ -8,11 +8,9 @@ def part1
 end
 
 def part2
-  sum = ->(mean : Int32) {
-    INPUT.sum { |v|
-      (v...mean).step(v > mean ? -1 : 1).to_a.map_with_index { |_, i| i + 1 }.sum
-    }
-  }
+  sum = ->(mean : Int32) { INPUT.sum { |v|
+    (v...mean).step(v > mean ? -1 : 1).to_a.map_with_index { |_, i| i + 1 }.sum
+  } }
   mean = INPUT.sum / INPUT.size
   floor, ceil = mean.floor.to_i, mean.ceil.to_i
   [floor, ceil].map { |v| sum.call(v) }.min
